@@ -21,11 +21,14 @@ public class Q8 {
 		int x2 = scanner.nextInt();
 		int y2 = scanner.nextInt();
 		
-		//검사
+		//검사 1) 사각형이 기존 사각형을 완전히 포함하지 않고 곂치는 경우
 		boolean case1 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y2 && y2<=recty2) ;
 		boolean case2 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y1 && y1<=recty2) ;
 		boolean case3 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y1 && y1<=recty2) ;
 		boolean case4 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y2 && y2<=recty2) ;
+		
+		//TODO : 검사 2) 사각형이 기존 사각형을 완전히 포함하는 경우
+		boolean specialCase = ();
 		
 		if(case1 || case2 || case3 || case4)
 			System.out.print("충돌합니다.");
