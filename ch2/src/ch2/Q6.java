@@ -12,6 +12,7 @@ public class Q6 {
 		int tenDigitsOfNum;
 		int digitOfNum;
 		
+		//십의 자릿수와 일의 자릿수 분류
 		if(num > 10) {
 			tenDigitsOfNum = num/10;
 			digitOfNum = num%10;
@@ -25,6 +26,7 @@ public class Q6 {
 			digitOfNum = num;
 		}
 		
+		//369
 		if (tenDigitsOfNum%3 == 0)//10의 자릿수가 3의 배수 일 때
 		{
 			if (digitOfNum != 0 && digitOfNum%3 == 0)//1의 자릿수도 3의 배수라면
@@ -33,7 +35,7 @@ public class Q6 {
 		}
 		else //10의 자릿수가 3의 배수가 아니거나 존재하지 않을 때(-1)
 		{
-			if (digitOfNum%3 == 0)//1의 자릿수가 3의 배수라면
+			if (digitOfNum != 0 && digitOfNum%3 == 0)//1의 자릿수가 3의 배수라면
 				System.out.print("박수짝");
 			else System.out.print("PASS");
 		}
