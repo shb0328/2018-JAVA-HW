@@ -21,16 +21,28 @@ public class Q8 {
 		int x2 = scanner.nextInt();
 		int y2 = scanner.nextInt();
 		
+		/*
 		//검사 1) 사각형이 기존 사각형을 완전히 포함하지 않고 곂치는 경우
-		//boolean case1 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y2 && y2<=recty2) ;//100<x2<200,100<y2<200
-		//boolean case2 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x2<200,100<y1<200
-		//boolean case3 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x1<200,100<y1<200
-		//boolean case4 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y2 && y2<=recty2) ;//100<x1<200,100<y2<200
+		boolean case1 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y2 && y2<=recty2) ;//100<x2<200,100<y2<200
+		boolean case2 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x2<200,100<y1<200
+		boolean case3 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x1<200,100<y1<200
+		boolean case4 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y2 && y2<=recty2) ;//100<x1<200,100<y2<200
 		
-		// 검사 2) 사각형이 기존 사각형을 완전히 포함하는 경우
-		//boolean specialCase = (x1<=rectx1 && y1 <=recty1 && x2 >= rectx2 && y2 >= recty2);
 		
-		if(/*case1 || case2 || case3 || case4 || specialCase*/)
+		//검사 2) 사각형이 기존 사각형을 완전히 포함하는 경우
+		boolean specialCase = (x1<=rectx1 && y1 <=recty1 && x2 >= rectx2 && y2 >= recty2);
+		*/
+		
+		//검사 1)사각형이 기존 사각형보다 작거나 같은 경우
+		boolean case1 = (rectx1<=x1 && x1<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x1<200,100<y1<200
+		boolean case2 = (rectx1<=x2 && x2<=rectx2) && (recty1<=y1 && y1<=recty2) ;//100<x2<200,100<y1<200
+			
+		//검사 2)사각형이 기존 사각형보다 큰 경우
+		boolean case3 = (x1<=rectx1 && rectx1<=x2) && (y1<=recty1 && recty1<=y2) ;//x1<100<x2,y1<100<y2
+		boolean case4 = (x1<=rectx2 && rectx2<=x2) && (y1<=recty2 && recty2<=y2) ;//x1<200<x2,y1<200<y2
+
+		
+		if(case1 || case2 || case3 || case4)
 			System.out.print("충돌합니다.");
 		else  System.out.print("충돌하지 않습니다.");
 		
