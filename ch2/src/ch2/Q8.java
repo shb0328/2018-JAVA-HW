@@ -31,7 +31,7 @@ public class Q8 {
 	}
 
 	public static boolean inRect(int x1, int y1, int x2, int y2, int rectx1, int recty1, int rectx2, int recty2) { //충돌검사함수
-		//error 수정 : 망할 십자가모양 = 완전포함 나머지 전부 커버가능
+		//완전 외 나머지 전부
 		boolean case1 = ((rectx1<=x1 && x1<=rectx2) || (rectx1<=x2 && x2<=rectx2)) 
 						&& ((y1<=recty1 && recty1<=y2) || (y1<=recty2 && recty2<=y2));
 		boolean case2 = ((x1<=rectx1 && rectx1<=x2) || (x1<=rectx2 && rectx2<=x2) ) 
