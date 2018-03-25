@@ -2,17 +2,16 @@ package ch2;
 
 import java.util.Scanner;
 public class Q8 {
-	//±âÁ¸ »ç°¢Çü
+	//ê¸°ì¡´ ì‚¬ê°í˜• ì¢Œí‘œ
 	private static final int rectx1 = 100;
 	private static final int recty1 = 100;
 	private static final int rectx2 = 200;
 	private static final int recty2 = 200;
 	
 	public static void main(String[] args) {
-		// µÎ »ç°¢Çü Ãæµ¹ ÆÇº°
 		Scanner scanner = new Scanner(System.in);
 		
-		//»ç°¢Çü ÀÔ·Â
+		//ì‚¬ê°í˜• ì¢Œí‘œ ë°›ê¸°
 		System.out.print("(x1,y1) : ");
 		int x1 = scanner.nextInt();
 		int y1 = scanner.nextInt();
@@ -23,21 +22,21 @@ public class Q8 {
 		boolean result = inRect(x1,y1,x2,y2);
 		
 		if(result)
-			System.out.print("Ãæµ¹ÇÕ´Ï´Ù.");
-		else  System.out.print("Ãæµ¹ÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.print("ì¶©ëŒí•©ë‹ˆë‹¤.");
+		else  System.out.print("ì¶©ëŒí•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		
 		scanner.close();
 	}
 
-	public static boolean inRect(int x1, int y1, int x2, int y2) { //Ãæµ¹°Ë»çÇÔ¼ö
-		//¿ÏÀü ¿Ü ³ª¸ÓÁö ÀüºÎ
+	public static boolean inRect(int x1, int y1, int x2, int y2) { //ï¿½æµ¹ï¿½Ë»ï¿½ï¿½Ô¼ï¿½
+		//ê·¸ ì™¸ ëª¨ë“  ì¶©ëŒ
 		boolean case1 = ((rectx1<=x1 && x1<=rectx2) || (rectx1<=x2 && x2<=rectx2)) 
 						&& ((y1<=recty1 && recty1<=y2) || (y1<=recty2 && recty2<=y2));
 		boolean case2 = ((x1<=rectx1 && rectx1<=x2) || (x1<=rectx2 && rectx2<=x2) ) 
 						&& ((recty1<=y1 && y1<=recty2) || (recty1<=y2 && y2<=recty2));
-		//¿ÏÀü Æ÷ÇÔ °ü°èÀÏ °æ¿ì
-		boolean case3 = ((rectx1>x1 && x2>rectx2) && (recty1>y1 && y2>recty2)); //»ç°¢ÇüÀÌ ±âÁ¸»ç°¢ÇüÀ» ¿ÏÀüÆ÷ÇÔ
-		boolean case4 = ((rectx1<x1 && x2<rectx2) && (recty1<y1 && y2<recty2)); //±âÁ¸»ç°¢ÇüÀÌ »ç°¢ÇüÀ» ¿ÏÀüÆ÷ÇÔ
+		//ì™„ì „í¬í•¨ ì¶©ëŒ
+		boolean case3 = ((rectx1>x1 && x2>rectx2) && (recty1>y1 && y2>recty2)); 
+		boolean case4 = ((rectx1<x1 && x2<rectx2) && (recty1<y1 && y2<recty2)); 
 		
 		if( case1 || case2 || case3 || case4)
 			return true;
