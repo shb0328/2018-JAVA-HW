@@ -13,39 +13,39 @@ class TestQ8 {
 		assertEquals(true,Q8.inRect( 10, 150, 150, 250));
 		assertEquals(true,Q8.inRect(150,  10, 250, 150));
 		assertEquals(true,Q8.inRect(150, 150, 250, 250));
-		System.out.print("¸ğ¼­¸®¿¡¼­ Ãæµ¹ÇÏ´Â °æ¿ì Á¤»óµ¿ÀÛ\n");
+		System.out.print("ëª¨ì„œë¦¬ì—ì„œ ì¶©ëŒí•˜ëŠ” ê²½ìš° ì •ìƒë™ì‘\n");
 		assertEquals(true,Q8.inRect(130, 130, 160, 160));
 		assertEquals(true,Q8.inRect( 10,  10, 250, 250));
-		System.out.print("¿ÏÀüÆ÷ÇÔ Ãæµ¹ÇÏ´Â °æ¿ì Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì™„ì „í¬í•¨ ì¶©ëŒí•˜ëŠ” ê²½ìš° ì •ìƒë™ì‘\n");
 		assertEquals(true,Q8.inRect( 10, 130, 250, 160));
 		assertEquals(true,Q8.inRect(130,  10, 160, 250));
-		System.out.print("½ÊÀÚ°¡ ¸ğ¾çÀ¸·Î Ãæµ¹ÇÏ´Â °æ¿ì Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì‹­ìê°€ ëª¨ì–‘ìœ¼ë¡œ ì¶©ëŒí•˜ëŠ” ê²½ìš° ì •ìƒë™ì‘\n");
 		assertEquals(true,Q8.inRect(100,  10, 200, 100));
 		assertEquals(true,Q8.inRect(100, 200, 200, 300));
 		assertEquals(true,Q8.inRect( 10, 100, 100, 200));
 		assertEquals(true,Q8.inRect(200, 100, 300, 200));
-		System.out.print("ÇÑ º¯ÀÌ ÈÃÄ Ãæµ¹ÇÏ´Â °æ¿ì Á¤»óµ¿ÀÛ\n\n");
+		System.out.print("í•œ ë³€ì´ ê³‚ì³ ì¶©ëŒí•˜ëŠ” ê²½ìš° ì •ìƒë™ì‘\n\n");
 	
 		
 		assertEquals(false,Q8.inRect(100, 250, 200, 300));
 		assertEquals(false,Q8.inRect( 50, 250, 200, 300));
 		assertEquals(false,Q8.inRect(150, 250, 200, 300));
-		System.out.print("»ç°¢ÇüÀÌ ¾Æ·¡ÂÊ¿¡ ÀÖÀ» ¶§ Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì‚¬ê°í˜•ì´ ì•„ë˜ìª½ì— ìˆì„ ë•Œ ì •ìƒë™ì‘\n");
 		assertEquals(false,Q8.inRect(250, 100, 300, 200));
 		assertEquals(false,Q8.inRect(250,  50, 300, 200));
 		assertEquals(false,Q8.inRect(250, 150, 300, 200));
-		System.out.print("»ç°¢ÇüÀÌ ¿À¸¥ÂÊ¿¡ ÀÖÀ» ¶§ Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì‚¬ê°í˜•ì´ ì˜¤ë¥¸ìª½ì— ìˆì„ ë•Œ ì •ìƒë™ì‘\n");
 		assertEquals(false,Q8.inRect(100,  10, 200,  30));
 		assertEquals(false,Q8.inRect(100,  10, 150,  30));
 		assertEquals(false,Q8.inRect(100,  10, 250,  30));
-		System.out.print("»ç°¢ÇüÀÌ À§¿¡ ÀÖÀ» ¶§ Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì‚¬ê°í˜•ì´ ìœ„ì— ìˆì„ ë•Œ ì •ìƒë™ì‘\n");
 		assertEquals(false,Q8.inRect( 10, 100,  30, 200));
 		assertEquals(false,Q8.inRect( 10, 100,  30, 150));
 		assertEquals(false,Q8.inRect( 10, 100,  30, 250));
-		System.out.print("»ç°¢ÇüÀÌ ¿ŞÂÊ¿¡ ÀÖÀ» ¶§ Á¤»óµ¿ÀÛ\n");
+		System.out.print("ì‚¬ê°í˜•ì´ ì™¼ìª½ì— ìˆì„ ë•Œ ì •ìƒë™ì‘\n");
 		assertEquals(false,Q8.inRect( 10,  10,  30,  30));
 		assertEquals(false,Q8.inRect(250, 250, 300, 300));
-		System.out.print("±× ¿Ü Ãæµ¹ÇÏÁö ¾Ê´Â °æ¿ì Á¤»óµ¿ÀÛ\n");
+		System.out.print("ê·¸ ì™¸ ì¶©ëŒí•˜ì§€ ì•ŠëŠ” ê²½ìš° ì •ìƒë™ì‘\n");
 	}
 
 }
