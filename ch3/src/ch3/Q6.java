@@ -11,7 +11,7 @@ public class Q6 {
 		Scanner scanner = new Scanner(System.in);
 		int money = scanner.nextInt();
 		for(int u : unit) {
-			System.out.print(u+"원 짜리 : "+ money/u +"개");
+			System.out.print(u+"원 짜리 : "+ money/u +"개"+'\n');
 			money = money - ((money/u)*u);
 		}
 		
