@@ -16,7 +16,14 @@ public class Q10 {
 		double r2 = scanner.nextInt();
 		
 		//원의 중심 사이의 거리 구하기
-		double d = Math.sqrt(((x1-x2)*(x1-x2))/((y1-y2)*(y1-y2)));
+		double d;
+		
+		if(y1 == y2)
+			d = Math.abs(x1-x2);
+		else if(x1 == x2)
+			d = Math.abs(y1-y2);
+		else
+			d = Math.sqrt(((x1-x2)*(x1-x2))/((y1-y2)*(y1-y2)));
 		
 		//판별
 		if(d <= Math.abs(r1+r2))
