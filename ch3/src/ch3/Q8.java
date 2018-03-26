@@ -1,6 +1,6 @@
 package ch3;
 
-import static org.junit.Assert.assertNotEquals;
+
 
 import java.util.Scanner;
 
@@ -8,6 +8,7 @@ public class Q8 {
 
 	public static void main(String[] args) {
 		System.out.print("정수 몇개? ");
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int num = scanner.nextInt();
 		int[] number = new int[num];
