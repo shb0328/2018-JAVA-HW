@@ -28,7 +28,7 @@ public class Q8 {
 		scanner.close();
 	}
 
-	public static boolean inRect(int x1, int y1, int x2, int y2) { //�浹�˻��Լ�
+	public static boolean inRect(int x1, int y1, int x2, int y2) { 
 		//그 외 모든 충돌
 		boolean case1 = ((rectx1<=x1 && x1<=rectx2) || (rectx1<=x2 && x2<=rectx2)) 
 						&& ((y1<=recty1 && recty1<=y2) || (y1<=recty2 && recty2<=y2));
