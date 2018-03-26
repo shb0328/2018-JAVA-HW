@@ -12,7 +12,7 @@ public class Q7 {
 		}
 		
 		double mean;
-		int sum = 0;
+		double sum = 0.0;
 		
 		for(int num : randomNumber)
 			sum += num;
