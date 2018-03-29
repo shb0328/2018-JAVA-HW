@@ -14,7 +14,7 @@ public class Q3 {
 			System.out.print('\n');
 		}
 		
-		
+		scanner.close();
 
 	}
 
