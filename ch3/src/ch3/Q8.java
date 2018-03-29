@@ -8,7 +8,6 @@ public class Q8 {
 
 	public static void main(String[] args) {
 		System.out.print("정수 몇개? ");
-		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int num = scanner.nextInt();
 		int[] number = new int[num];
@@ -31,6 +30,6 @@ public class Q8 {
 			System.out.print(number[i]+" ");
 			if(0==(i+1)%10) System.out.print("\n");
 		}
-	
+		scanner.close();
 	}
 }
