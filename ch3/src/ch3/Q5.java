@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Q5 {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("resource")
+		
 		Scanner scanner = new Scanner(System.in);
 		int[] num = new int[10];
 		System.out.print("양의 정수 10개를 입력하시오>> ");
@@ -18,6 +18,8 @@ public class Q5 {
 			if(number%3 == 0)
 				System.out.print(number+" ");
 		}
+		
+		scanner.close();
 		
 	}
 
