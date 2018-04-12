@@ -26,11 +26,16 @@ class Circle {
  public class CircleManager {
 
 	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
 		Circle[] c = new Circle[3];
+		
 		for(int i =0; i<c.length; ++i) {
 			System.out.println("x, y, radius >>");
-			c[i] = new Circle(scanner.nextDouble(),scanner.nextDouble(),scanner.nextInt());
+			double x = scanner.nextDouble();
+			double y = scanner.nextDouble();
+			int radius = scanner.nextInt();
+			c[i] = new Circle(x,y,radius);
 		}
 		
 		int largestCircle = 0;
