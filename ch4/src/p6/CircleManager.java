@@ -3,21 +3,12 @@ package p6;
 import java.util.Scanner;
 
 class Circle {
-	public static final double pi = 3.141592;
-	
 	private double x,y;
 	private int radius;
 	public Circle(double x, double y, int radius) {
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
-	}
-	
-	private double area() { //원의 넓이
-		return radius*radius*pi;
-	}
-	private boolean largest(Circle c) { //현재 원이 c보다 크면 true 리턴
-		return (this.area() > c.area());
 	}
 	
 	public void show() {
@@ -40,10 +31,7 @@ class Circle {
 		}
 		
 		for(int i =0; i<c.length;++i) {
-			int largestCircle=0;
-			
-			System.out.print("가장 면적이 큰 원은 ");
-			c[largestCircle].show();
+			c[i].show();
 		}
 		scanner.close();
 	}
