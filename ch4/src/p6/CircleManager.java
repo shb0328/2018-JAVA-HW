@@ -13,16 +13,17 @@ class Circle {
 		this.radius = radius;
 	}
 	
-	double area() { //원의 넓이
+	private double area() { //원의 넓이
 		return radius*radius*pi;
 	}
-
+	private boolean largest(Circle c) { //현재 원이 c보다 크면 true 리턴
+		return (this.area() > c.area());
+	}
 	
 	public void show() {
 		System.out.println("("+x+","+y+")"+radius);
 	}
 }
-
  public class CircleManager {
 
 	public static void main(String[] args) {
@@ -38,14 +39,12 @@ class Circle {
 			c[i] = new Circle(x,y,radius);
 		}
 		
-		int largestCircle = 0;
-		for(int i =1; i<c.length;++i) {
-			if(c[largestCircle].area() < c[i].area()) largestCircle = i;
+		for(int i =0; i<c.length;++i) {
+			int largestCircle=0;
+			
+			System.out.print("가장 면적이 큰 원은 ");
+			c[largestCircle].show();
 		}
-		
-		System.out.print("가장 면적이 큰 원은 ");
-		c[largestCircle].show();
-
 		scanner.close();
 	}
 
