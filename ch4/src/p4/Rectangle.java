@@ -19,11 +19,8 @@ public class Rectangle {
 	}
 	
 	boolean contains(Rectangle r) { //r 이 현 사각형 안에 있으면 true
-		if(	(this.x<r.x && this.x+this.width > r.x+r.width )
-			&& (this.y<r.y && this.y+this.height > r.y+r.height) ) 
-			return true;
-		else 
-			return false;
+		return (	(this.x<r.x && this.x+this.width > r.x+r.width )
+			&& (this.y<r.y && this.y+this.height > r.y+r.height) ) ;
 	}
 
 	public static void main(String[] args) {
