@@ -39,7 +39,7 @@ class ReservationSystem {
 		}
 		return areaOfSeat;
 	}
-	private static int selectNumOfSeat() {
+	private static int selectNumOfSeat(int areaOfSeat) {
 		int numOfSeat =0;
 		Scanner scanner = new Scanner(System.in);  
 		
@@ -50,6 +50,10 @@ class ReservationSystem {
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				scanner.nextLine();//버퍼비우기
+				continue;
+			}if(numOfSeat>=allSeat[areaOfSeat-1].length||numOfSeat<0) {
+				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
+				numOfSeat = 0;
 				continue;
 			}if(0==numOfSeat) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
@@ -68,18 +72,13 @@ class ReservationSystem {
 		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
-		while(0==numOfSeat) {
-			numOfSeat=selectNumOfSeat();//좌석번호선택
-			try {
-				allSeat[areaOfSeat-1][numOfSeat] = name;//좌석지정
-			}catch(IndexOutOfBoundsException e) {
-				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
-				numOfSeat = 0;
-			}
-		}
 		
-		//scanner.close(); //다시 main함수에서 scanner 사용 시 NoSuchElementException 에러 발생
+		numOfSeat=selectNumOfSeat(areaOfSeat);//좌석번호선택
+		allSeat[areaOfSeat-1][numOfSeat] = name;//좌석지정
+		
+		//scanner.close(); //다시 main함수에서 scanner 사용 시 NoSuchElementException 에러 발생	
 	}
+		
 	public static void lookup() {//-----------------------------조회()
 		for(int areaOfSeat = 1; areaOfSeat<=allSeat.length;++areaOfSeat) {
 			seatView(areaOfSeat);
