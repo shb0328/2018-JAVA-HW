@@ -71,7 +71,7 @@ class ReservationSystem {
 			}
 		}
 		
-		//scanner.close();
+		scanner.close();
 	}
 	public static void lookup() {
 		for(int area = 1; area<=allSeat.length;++area) {
