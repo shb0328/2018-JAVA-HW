@@ -58,6 +58,7 @@ class ReservationSystem {
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				scanner.nextLine();//버퍼비우기
+				continue;
 			}if(0==numOfSeat) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				continue;
