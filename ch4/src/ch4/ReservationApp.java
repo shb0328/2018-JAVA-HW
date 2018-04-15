@@ -18,13 +18,10 @@ class ReservationSystem {
 		}System.out.print("\n");
 	}
 	
-	
-	public static void reservation() {//-----------------------------예약()
+	private static int seatSelect() {
 		int area=0;
-		int numOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
-		
-		while(0==area) {//-------------------------------------------좌석선택
+		while(0==area) {
 			System.out.print("좌석구분 S(1), A(2), B(3)>>");
 			try {
 				area = scanner.nextInt(); 
@@ -40,7 +37,17 @@ class ReservationSystem {
 				area = 0;
 			}
 		}
+		return area;
+	}
 	
+	public static void reservation() {//-----------------------------예약()
+		int area=0;
+		int numOfSeat=0;
+		Scanner scanner = new Scanner(System.in);  
+				
+		area=seatSelect();//좌석선택
+		
+
 		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
