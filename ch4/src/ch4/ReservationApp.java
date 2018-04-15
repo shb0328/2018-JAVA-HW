@@ -18,7 +18,7 @@ class ReservationSystem {
 		}System.out.print("\n");
 	}
 	
-	private static int SelectAreaOfSeat() {
+	private static int selectAreaOfSeat() {
 		int areaOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
 		while(0==areaOfSeat) {
@@ -39,7 +39,7 @@ class ReservationSystem {
 		}
 		return areaOfSeat;
 	}
-	private static int SelectNumOfSeat() {
+	private static int selectNumOfSeat() {
 		int numOfSeat =0;
 		Scanner scanner = new Scanner(System.in);  
 		
@@ -63,13 +63,13 @@ class ReservationSystem {
 		int numOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
 				
-		areaOfSeat=SelectAreaOfSeat();//좌석선택
+		areaOfSeat=selectAreaOfSeat();//좌석선택
 		
 		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
 		while(0==numOfSeat) {
-			numOfSeat=SelectNumOfSeat();//좌석번호선택
+			numOfSeat=selectNumOfSeat();//좌석번호선택
 			try {
 				allSeat[areaOfSeat-1][numOfSeat] = name;//좌석지정
 			}catch(IndexOutOfBoundsException e) {
