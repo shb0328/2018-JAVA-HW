@@ -17,7 +17,6 @@ class ReservationSystem {
 			System.out.print(" "+seat);
 		}System.out.print("\n");
 	}
-	
 	private static int selectAreaOfSeat() {
 		int areaOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
@@ -61,18 +60,30 @@ class ReservationSystem {
 		}
 		return numOfSeat;
 	}
-	
-	public static void reservation() {//-----------------------------예약()
+	private static String inputName() {
+		Scanner scanner = new Scanner(System.in);  
+		System.out.print("이름>>");
+		String name=scanner.next();
+		return name;
+	}
+	private static int findNumOfSeat(int areaOfSeat, String name) {
+		int numOfSeat = 0;
+		for(int i =0; i<allSeat[areaOfSeat-1].length;++i) {
+			if(name.equals(allSeat[areaOfSeat-1][i])) {
+				return i;
+			}
+		}
+		System.out.println("예약된 이름을 찾을 수 없습니다.\n다시 입력해주세요.");
+		return numOfSeat;
+	}
+	public static void reservation() {//-----------------------예약()
 		int areaOfSeat=0;
 		int numOfSeat=0;
-		Scanner scanner = new Scanner(System.in);  
+		String name = null;
+		
 				
 		areaOfSeat=selectAreaOfSeat();//좌석선택
-		
-		System.out.print("이름>>");//----------------------------------이름입력
-		String name=scanner.next();
-		
-		
+		name=inputName();//이름입력
 		numOfSeat=selectNumOfSeat(areaOfSeat);//좌석번호선택
 		allSeat[areaOfSeat-1][numOfSeat] = name;//좌석지정
 		
@@ -86,7 +97,16 @@ class ReservationSystem {
 		System.out.println("<<조회를 완료하였습니다.>>");
 	}
 	public static void cancel() {//-----------------------------취소()
+		int areaOfSeat=0;
+		int numOfSeat=0;
+		String name = null;
 		
+		while(0==numOfSeat) {
+			areaOfSeat=selectAreaOfSeat();//좌석선택
+			name=inputName();//이름입력
+			numOfSeat=findNumOfSeat(areaOfSeat,name);//좌석찾기
+		}
+		allSeat[areaOfSeat-1][numOfSeat] = "---";//좌석취소
 	}
 }
 
@@ -110,8 +130,8 @@ public class ReservationApp {
 			switch(optionNumber) {
 			case 1: ReservationSystem.reservation(); break; //예약()
 			case 2: ReservationSystem.lookup(); break;//조회()
-			case 3: //취소()
-			case 4: scanner.close(); System.exit(0); break;
+			case 3: ReservationSystem.cancel(); break;//취소()
+			case 4: scanner.close(); System.exit(0);
 				default:System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 			}
 		}
