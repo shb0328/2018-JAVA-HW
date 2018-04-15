@@ -42,6 +42,7 @@ class ReservationSystem {
 	private static int SelectNumOfSeat() {
 		int numOfSeat =0;
 		Scanner scanner = new Scanner(System.in);  
+		
 		while(0==numOfSeat) {
 			System.out.print("번호>>");
 			try {
@@ -52,12 +53,11 @@ class ReservationSystem {
 				continue;
 			}if(0==numOfSeat) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
-				continue;
 			}
-			
 		}
 		return numOfSeat;
 	}
+	
 	public static void reservation() {//-----------------------------예약()
 		int areaOfSeat=0;
 		int numOfSeat=0;
@@ -68,12 +68,14 @@ class ReservationSystem {
 		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
-		numOfSeat=SelectNumOfSeat();
-		try {
-			allSeat[areaOfSeat-1][numOfSeat] = name;
-		}catch(IndexOutOfBoundsException e) {
-			System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
-			numOfSeat = 0;
+		while(0==numOfSeat) {
+			numOfSeat=SelectNumOfSeat();//좌석번호선택
+			try {
+				allSeat[areaOfSeat-1][numOfSeat] = name;//좌석지정
+			}catch(IndexOutOfBoundsException e) {
+				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
+				numOfSeat = 0;
+			}
 		}
 		
 		//scanner.close(); //다시 main함수에서 scanner 사용 시 NoSuchElementException 에러 발생
@@ -100,7 +102,7 @@ public class ReservationApp {
 			System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4 >> ");
 			int optionNumber;
 			try {
-				optionNumber = scanner.nextInt(); //java.util.NoSuchElementException *여기*
+				optionNumber = scanner.nextInt(); //NoSuchElementException *여기*
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				continue;
