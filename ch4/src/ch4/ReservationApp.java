@@ -73,13 +73,13 @@ class ReservationSystem {
 		
 		//scanner.close(); //다시 main함수에서 scanner 사용 시 NoSuchElementException 에러 발생
 	}
-	public static void lookup() {
+	public static void lookup() {//-----------------------------조회()
 		for(int area = 1; area<=allSeat.length;++area) {
 			seatView(area);
 		}
 		System.out.println("<<조회를 완료하였습니다.>>");
 	}
-	public static void cancel() {
+	public static void cancel() {//-----------------------------취소()
 		
 	}
 }
