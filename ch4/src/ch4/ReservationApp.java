@@ -17,15 +17,17 @@ class ReservationSystem {
 			System.out.print(" "+seat);
 		}System.out.print("\n");
 	}
-	public static void reservation() {
+	
+	
+	public static void reservation() {//-----------------------------예약()
 		int area=0;
 		int numOfSeat=0;
-		Scanner scanner = new Scanner(System.in); //이렇게 함수안에서 써도 좋은건지
+		Scanner scanner = new Scanner(System.in); //이렇게 함수안에서 써도 좋은건지//저 in 이 static이라 함수 끝나고 영향이있는듯 
 		
-		while(0==area) {
+		while(0==area) {//-------------------------------------------좌석선택
 			System.out.print("좌석구분 S(1), A(2), B(3)>>");
 			try {
-				area = scanner.nextInt(); //a 입력시 catch -> 무한루프. char 입력스트림 버퍼? 비워야할듯 ->java.io 찾아보자
+				area = scanner.nextInt(); 
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				continue;
@@ -45,13 +47,16 @@ class ReservationSystem {
 						area = 0;
 			}
 		}
-		System.out.print("이름>>");
+		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
-		while(0==numOfSeat) {
+		while(0==numOfSeat) {//---------------------------------------번호입력
 			System.out.print("번호>>");
+			try {
 			numOfSeat=scanner.nextInt();
-			if(0==numOfSeat) {
+			}catch(InputMismatchException e) {
+				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
+			}if(0==numOfSeat) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				continue;
 			}
@@ -63,7 +68,7 @@ class ReservationSystem {
 			}
 		}
 		
-		scanner.close();
+		//scanner.close();
 	}
 	public static void lookup() {
 		for(int area = 1; area<=allSeat.length;++area) {
@@ -97,11 +102,11 @@ public class ReservationApp {
 			case 1: ReservationSystem.reservation(); break; //예약()
 			case 2: ReservationSystem.lookup(); break;//조회()
 			case 3: //취소()
-			case 4: System.exit(0);
+			case 4: scanner.close(); System.exit(0); break;
 				default:System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 			}
 		}
-		//scanner.close();
+		
 	}
 
 }
