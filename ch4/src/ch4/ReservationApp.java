@@ -33,21 +33,14 @@ class ReservationSystem {
 				scanner.nextLine();//버퍼비우기
 				continue;
 			}
-			switch(area) {
-				case 1: 
-					seatView(1);
-					break;
-				case 2:
-					seatView(2);
-					break;
-				case 3:
-					seatView(3);
-					break;
-					default:
-						System.out.println("잘못된 입력입니다.\n다시 입력해주세요."); 
-						area = 0;
+			try {
+				seatView(area);
+			}catch(IndexOutOfBoundsException e){
+				System.out.println("잘못된 입력입니다.\n다시 입력해주세요."); 
+				area = 0;
 			}
 		}
+	
 		System.out.print("이름>>");//----------------------------------이름입력
 		String name=scanner.next();
 		
