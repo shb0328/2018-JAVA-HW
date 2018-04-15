@@ -22,7 +22,7 @@ class ReservationSystem {
 	public static void reservation() {//-----------------------------예약()
 		int area=0;
 		int numOfSeat=0;
-		Scanner scanner = new Scanner(System.in); //이렇게 함수안에서 써도 좋은건지//저 in 이 static이라 함수 끝나고 영향이있는듯 
+		Scanner scanner = new Scanner(System.in);  
 		
 		while(0==area) {//-------------------------------------------좌석선택
 			System.out.print("좌석구분 S(1), A(2), B(3)>>");
@@ -71,7 +71,7 @@ class ReservationSystem {
 			}
 		}
 		
-		scanner.close();
+		//scanner.close(); //다시 main함수에서 scanner 사용 시 NoSuchElementException 에러 발생
 	}
 	public static void lookup() {
 		for(int area = 1; area<=allSeat.length;++area) {
@@ -95,7 +95,7 @@ public class ReservationApp {
 			System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4 >> ");
 			int optionNumber;
 			try {
-				optionNumber = scanner.nextInt(); //java.util.NoSuchElementException *여기부터*
+				optionNumber = scanner.nextInt(); //java.util.NoSuchElementException *여기*
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				continue;
