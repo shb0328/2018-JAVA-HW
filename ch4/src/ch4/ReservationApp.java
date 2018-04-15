@@ -18,7 +18,7 @@ class ReservationSystem {
 		}System.out.print("\n");
 	}
 	
-	private static int seatSelect() {
+	private static int SelectAreaOfSeat() {
 		int areaOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
 		while(0==areaOfSeat) {
@@ -45,7 +45,7 @@ class ReservationSystem {
 		int numOfSeat=0;
 		Scanner scanner = new Scanner(System.in);  
 				
-		areaOfSeat=seatSelect();//좌석선택
+		areaOfSeat=SelectAreaOfSeat();//좌석선택
 		
 
 		System.out.print("이름>>");//----------------------------------이름입력
