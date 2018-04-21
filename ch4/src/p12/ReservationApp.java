@@ -122,7 +122,7 @@ public class ReservationApp {
 			System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4 >> ");
 			int optionNumber;
 			try {
-				optionNumber = scanner.nextInt(); //NoSuchElementException *여기*
+				optionNumber = scanner.nextInt(); 
 			}catch(InputMismatchException e) {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 				scanner.nextLine();//버퍼비우기
