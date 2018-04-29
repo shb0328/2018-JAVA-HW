@@ -32,7 +32,7 @@ class ReservationSystem {
 				areaOfSeat = 0;
 			}
 		}
-		scanner.close();
+		
 		return areaOfSeat;
 	}
 	private int selectNumOfSeat(int areaOfSeat) {
@@ -55,14 +55,13 @@ class ReservationSystem {
 				System.out.println("잘못된 입력입니다.\n다시 입력해주세요.");
 			}
 		}
-		scanner.close();
 		return numOfSeat;
 	}
 	private String inputName() {
 		Scanner scanner = new Scanner(System.in);  
 		System.out.print("이름>>");
 		String name=scanner.next();
-		scanner.close();
+		
 		return name;
 	}
 	private int findNumOfSeat(int areaOfSeat, String name) {
