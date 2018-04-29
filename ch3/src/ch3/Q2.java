@@ -1,7 +1,7 @@
 package ch3;
 
 public class Q2 {
-
+	
 	public static void main(String[] args) {
 		int[][] n = {{1},{1,2,3},{1},{1,2,3,4},{1,2}};
 		
@@ -11,7 +11,7 @@ public class Q2 {
 			}
 			System.out.print('\n');
 		}
-
+		
 	}
 
 }
